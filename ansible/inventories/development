@@ -1,0 +1,4 @@
+[development]
+default ansible_ssh_host=192.168.33.11
+[development:vars]
+logstash_conf=logstash.conf.development.j2

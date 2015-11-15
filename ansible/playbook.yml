@@ -1,0 +1,21 @@
+- name: Setup OdiloTT environment
+  hosts: all
+  roles:
+  - core
+# - laggyluke.nodejs
+  - npm-packages
+# - greendayonfire.mongodb
+#  - api-gateway
+#  - api-gateway-gatekeeper
+  - odilott-services
+  - odilott-server
+  - odilott-client
+
+  vars:
+    odilott_host: 192.168.33.10
+    mongodb_conf_httpinterface: true
+    mongodb_url: "mongodb://{{odilott_host}}/odilott-dev"
+    mongodb_conf_bind_ip: "{{odilott_host}}"
+    mongod_datadir_prefix: "/data/"
+    mongod_replication: false
+    mongod_port: 2701
